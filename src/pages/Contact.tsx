@@ -86,7 +86,7 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-7 bg-white p-8 rounded-2xl border border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-6">
-              Demande de Renseignements / Séance d'essai
+              Nous contacter
             </h3>
 
             <form onSubmit={handleContactSubmit} className="space-y-4">

@@ -4,7 +4,7 @@ export default function ContactEmail() {
   return (
     <a
       className="text-xs hover:text-amber-700 hover:underline"
-      href="mailto:{CLUB_EMAIL}"
+      href={`mailto:${CLUB_EMAIL}`}
     >
       {CLUB_EMAIL}
     </a>

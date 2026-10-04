@@ -1,11 +1,4 @@
-import {
-  ChessQueen,
-  ChevronRight,
-  MapPin,
-  Menu,
-  Sparkles,
-  X,
-} from "lucide-react";
+import { ChessQueen, ChevronRight, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ROUTES } from "./Routes";
@@ -54,13 +47,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden sm:flex items-center gap-3">
-          <Link
-            to="/essai"
-            className="px-4 py-2.5 text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors flex items-center gap-2"
-          >
-            <Sparkles className="w-4 h-4 text-slate-900" />
+          <div className="px-4 py-2.5 text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors flex items-center gap-2">
             <span>Séance d'essai gratuite</span>
-          </Link>
+          </div>
         </div>
 
         <button

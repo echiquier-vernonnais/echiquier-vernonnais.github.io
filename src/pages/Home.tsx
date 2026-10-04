@@ -1,6 +1,4 @@
 import {
-  ArrowRight,
-  Calendar,
   ChessKing,
   ChessKnight,
   ChessPawn,
@@ -12,8 +10,13 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../components/Routes";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function HomePage() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 5000 }),
+  ]);
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
@@ -22,11 +25,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Main Text */}
             <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold">
-                <Calendar className="w-4 h-4 text-amber-600" />
-                <span>Séances chaque samedi après-midi à Vernon</span>
-              </div>
-
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900">
                 L'Échiquier Vernonnais
               </h1>
@@ -37,48 +35,27 @@ export default function HomePage() {
                 perfectionnez votre jeu dans un cadre accueillant et passionné.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                <Link
-                  to={ROUTES.contact.path}
-                  className="w-full sm:w-auto px-6 py-3.5 text-base font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>S'inscrire / Essai Gratuit</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-
-                <Link
-                  to={ROUTES.leClub.path}
-                  className="w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>Découvrir nos cours</span>
-                </Link>
-              </div>
-
-              {/* Quick Schedule Overview */}
-              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-slate-100 max-w-lg mx-auto lg:mx-0">
-                <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                  <div className="text-xl font-bold text-slate-900">
-                    14h - 15h
-                  </div>
-                  <div className="text-xs text-slate-500 font-medium">
-                    Cours Débutants
-                  </div>
-                </div>
-                <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                  <div className="text-xl font-bold text-slate-900">
-                    15h - 16h
-                  </div>
-                  <div className="text-xs text-slate-500 font-medium">
-                    Perfectionnement
-                  </div>
-                </div>
-                <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                  <div className="text-xl font-bold text-amber-700">
-                    16h - 17h
-                  </div>
-                  <div className="text-xs text-slate-500 font-medium">
-                    Joueurs Confirmés
-                  </div>
+              <div
+                className="overflow-hidden rounded-2xl border border-slate-200"
+                ref={emblaRef}
+              >
+                <div className="flex">
+                  {[
+                    { src: "/enfants.jpg", caption: "Cours débutants" },
+                    { src: "/tournoi.jpg", caption: "Open FIDE" },
+                    { src: "/chessbar.jpg", caption: "Chess bar" },
+                  ].map((img, i) => (
+                    <div key={i} className="flex-[0_0_100%] min-w-0 relative">
+                      <img
+                        src={img.src}
+                        alt={img.caption}
+                        className="w-full h-64 object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm text-center">
+                        {img.caption}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
