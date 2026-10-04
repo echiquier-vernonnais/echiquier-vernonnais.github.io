@@ -1,4 +1,11 @@
-import { ChevronRight, Crown, MapPin, Menu, Sparkles, X } from "lucide-react";
+import {
+  ChessQueen,
+  ChevronRight,
+  MapPin,
+  Menu,
+  Sparkles,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,7 +18,6 @@ export default function Header() {
     { path: "/tarifs", label: "Tarifs & Cotisations" },
     { path: "/calendrier", label: "Calendrier" },
     { path: "/contact", label: "Contact & Accès" },
-    { path: "/essai", label: "Séance d'Essai", isBadge: true },
     { path: "/mentions", label: "Mentions & Infos" },
   ];
   return (
@@ -23,7 +29,7 @@ export default function Header() {
           className="flex items-center gap-3 text-left focus:outline-none group"
         >
           <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 transition-all">
-            <Crown className="w-5 h-5" />
+            <ChessQueen className="w-5 h-5" />
           </div>
           <div>
             <span className="text-lg font-bold tracking-tight text-slate-900 block leading-tight">
@@ -35,10 +41,8 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
         <nav className="hidden xl:flex items-center gap-1">
           {navItems.map((item) => {
-            if (item.isBadge) return null;
             const isActive = location.pathname === item.path;
             return (
               <Link
@@ -56,7 +60,6 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Header Action CTA Button */}
         <div className="hidden sm:flex items-center gap-3">
           <Link
             to="/essai"
@@ -67,7 +70,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="xl:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none"
@@ -81,7 +83,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-lg">
           {navItems.map((item) => {

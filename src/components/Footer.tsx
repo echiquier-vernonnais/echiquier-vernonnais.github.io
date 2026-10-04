@@ -1,17 +1,21 @@
-import { Clock, Crown, Mail, MapPin, Shield } from "lucide-react";
+import { ChessQueen, Clock, Mail, MapPin, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import ContactEmail from "./ContactEmail";
+import ClubLocation from "./ClubLocation";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-50 text-slate-600 border-t border-slate-200 pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-200 text-xs">
-          {/* Club Brand */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-700">
-                <Crown className="w-5 h-5" />
-              </div>
+              <a
+                href="/"
+                className="w-9 h-9 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-700"
+              >
+                <ChessQueen className="w-5 h-5" />
+              </a>
               <div>
                 <span className="text-base font-bold text-slate-900 block">
                   L'Échiquier Vernonnais
@@ -27,7 +31,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Nav Links */}
           <div>
             <h4 className="font-bold text-slate-900 uppercase tracking-wider mb-3 text-xs">
               Pages du site
@@ -73,7 +76,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Practical Info */}
           <div>
             <h4 className="font-bold text-slate-900 uppercase tracking-wider mb-3 text-xs">
               Informations
@@ -85,18 +87,15 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <span>
-                  Maison des Associations / Salle Municipale, 27200 Vernon
-                </span>
+                <ClubLocation />
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <span>echiquier.vernonnais@gmail.com</span>
+                <ContactEmail />
               </li>
             </ul>
           </div>
 
-          {/* Affiliation Badge */}
           <div className="space-y-3">
             <h4 className="font-bold text-slate-900 uppercase tracking-wider text-xs">
               Affiliation

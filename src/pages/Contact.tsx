@@ -1,5 +1,7 @@
 import { CheckCircle2, Clock, Mail, MapPin } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import ContactEmail from "../components/ContactEmail";
+import ClubLocation from "../components/ClubLocation";
 
 export default function ContactPage() {
   const [contactForm, setContactForm] = useState({
@@ -50,12 +52,7 @@ export default function ContactPage() {
                   <div className="font-bold text-slate-900 text-sm">
                     Adresse du Club
                   </div>
-                  <div className="text-xs text-slate-600">
-                    Maison des Associations / Salle Municipale
-                  </div>
-                  <div className="text-xs text-slate-600">
-                    27200 Vernon, Normandie
-                  </div>
+                  <ClubLocation />
                 </div>
               </div>
 
@@ -80,9 +77,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-bold text-slate-900 text-sm">Email</div>
-                  <div className="text-xs text-slate-600">
-                    echiquier.vernonnais@gmail.com
-                  </div>
+                  <ContactEmail />
                 </div>
               </div>
             </div>

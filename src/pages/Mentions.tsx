@@ -1,4 +1,6 @@
 import { Building2, FileText } from "lucide-react";
+import ContactEmail from "../components/ContactEmail";
+import ClubLocation from "../components/ClubLocation";
 
 export default function MentionsPage() {
   return (
@@ -27,11 +29,10 @@ export default function MentionsPage() {
               <strong>Nom :</strong> L'Échiquier Vernonnais
             </li>
             <li>
-              <strong>Lieu des activités :</strong> Maison des Associations /
-              Salle Municipale, 27200 Vernon, Normandie
+              <strong>Lieu des activités :</strong> <ClubLocation />
             </li>
             <li>
-              <strong>Email de contact :</strong> echiquier.vernonnais@gmail.com
+              <strong>Email de contact :</strong> <ContactEmail />
             </li>
             <li>
               <strong>Affiliation :</strong> Fédération Française des Échecs
