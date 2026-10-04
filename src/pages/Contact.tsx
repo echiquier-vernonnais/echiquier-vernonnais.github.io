@@ -25,7 +25,7 @@ export default function ContactPage() {
             <p className="text-slate-600 text-sm leading-relaxed">
               Une question sur les inscriptions, les créneaux des cours ou le
               bénévolat ? Venez nous rencontrer le samedi après-midi ou
-              écrivez-nous directement via le formulaire.
+              écrivez-nous directement par email: <ContactEmail />
             </p>
 
             <div className="space-y-4 pt-2">
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   <div className="font-bold text-slate-900 text-sm">
                     Horaires des séances
                   </div>
-                  <div className="text-xs text-slate-600">
+                  <div className="text-slate-600">
                     Chaque samedi après-midi : 14h00 – 18h00 (Cours & Jeux
                     libres)
                   </div>
