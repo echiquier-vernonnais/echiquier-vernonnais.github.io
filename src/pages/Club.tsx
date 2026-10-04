@@ -1,4 +1,5 @@
-import { GraduationCap, Link, Trophy, Users } from "lucide-react";
+import { GraduationCap, Trophy, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ClubPage() {
   return (
