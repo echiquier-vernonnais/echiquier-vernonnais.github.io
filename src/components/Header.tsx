@@ -78,7 +78,7 @@ export default function Header() {
 
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-lg">
-          {navItems.map((item) => {
+          {Object.values(ROUTES).map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <Link
