@@ -15,13 +15,13 @@ export const ROUTES = {
     label: "Le Club & Cours",
   },
   tarifs: {
-    path: "/tarifs",
-    label: "Tarifs & Cotisations",
+    path: "/inscriptions",
+    label: "Inscriptions",
     component: <TarifsPage />,
   },
   contact: {
     path: "/contact",
-    label: "Contact & Accès",
+    label: "Accès & Contact",
     component: <ContactPage />,
   },
 } as const;

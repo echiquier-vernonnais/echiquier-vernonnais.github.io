@@ -1,23 +1,8 @@
-import { CheckCircle2, Clock, Mail, MapPin } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { Clock, Mail, MapPin } from "lucide-react";
 import ContactEmail from "../components/ContactEmail";
 import ClubLocation from "../components/ClubLocation";
 
 export default function ContactPage() {
-  const [contactForm, setContactForm] = useState({
-    name: "",
-    email: "",
-    subject: "Séance d'essai gratuite - Cours Débutants (14h-15h)",
-    message: "",
-  });
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-
-  const handleContactSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setContactSubmitted(true);
-    setTimeout(() => setContactSubmitted(false), 6000);
-  };
-
   return (
     <div className="space-y-16 pb-16">
       {/* Header Banner */}
@@ -86,104 +71,16 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-7 bg-white p-8 rounded-2xl border border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-6">
-              Nous contacter
+              Nous rejoindre
             </h3>
 
-            <form onSubmit={handleContactSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Nom & Prénom
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Votre nom"
-                    value={contactForm.name}
-                    onChange={(e) =>
-                      setContactForm({ ...contactForm, name: e.target.value })
-                    }
-                    className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Adresse Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="votre@email.com"
-                    value={contactForm.email}
-                    onChange={(e) =>
-                      setContactForm({ ...contactForm, email: e.target.value })
-                    }
-                    className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:bg-white"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Créneau ou sujet d'intérêt
-                </label>
-                <select
-                  value={contactForm.subject}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, subject: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:border-amber-400 focus:bg-white"
-                >
-                  <option>
-                    Séance d'essai gratuite - Cours Débutants (14h-15h)
-                  </option>
-                  <option>
-                    Séance d'essai gratuite - Perfectionnement (15h-16h)
-                  </option>
-                  <option>Séance d'essai gratuite - Confirmés (16h-17h)</option>
-                  <option>Jeux libres (14h-18h)</option>
-                  <option>
-                    Inscription Adulte (Licence A 70€ / Licence B 30€)
-                  </option>
-                  <option>
-                    Inscription Jeune -20 ans (Licence A 40€ / Licence B 20€)
-                  </option>
-                  <option>Renseignements généraux / Compétitions</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Précisez votre niveau ou vos questions..."
-                  value={contactForm.message}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, message: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:bg-white"
-                />
-              </div>
-
-              {contactSubmitted && (
-                <div className="p-3 rounded-lg text-xs font-medium bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>
-                    Merci pour votre message ! L'Échiquier Vernonnais vous
-                    répondra très rapidement.
-                  </span>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                className="w-full py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl text-sm transition-colors"
-              >
-                Envoyer le message
-              </button>
-            </form>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.2357259573096!2d1.4868030766958078!3d49.082160671363354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6c9edae1aa8c5%3A0x892d7a3a9f148ccf!2sMaison%20des%20Associations%20-%20Espace%20Marcel%20Beaufour!5e0!3m2!1sfr!2sfr!4v1791140764623!5m2!1sfr!2sfr"
+              width="600"
+              height="450"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </div>
         </div>
       </section>

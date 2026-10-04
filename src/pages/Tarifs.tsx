@@ -2,16 +2,15 @@ import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function TarifsPage() {
+  const YAPLA_INSCRIPTION_URL =
+    "https://echiquier-vernonnais.s2.yapla.com/fr/event-119423";
+
   return (
     <div className="space-y-16 pb-16">
-      {/* Header Banner */}
       <section className="bg-slate-50 border-b border-slate-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-xs font-bold text-amber-800 uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-            Cotisations Annuelles
-          </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">
-            Grille Tarifaire L'Échiquier Vernonnais
+            Cotisations annuelles de l'Échiquier Vernonnais
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
             Tarifs annuels de septembre à juin selon le type de licence FFÉ (A
@@ -20,7 +19,6 @@ export default function TarifsPage() {
         </div>
       </section>
 
-      {/* Pricing Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Tarif Jeunes */}
@@ -89,10 +87,11 @@ export default function TarifsPage() {
             </div>
 
             <Link
-              to="/contact"
+              to={YAPLA_INSCRIPTION_URL}
+              target="_blank"
               className="block w-full text-center py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs sm:text-sm transition-colors"
             >
-              Inscrire un jeune
+              S'inscrire en ligne
             </Link>
           </div>
 
@@ -171,10 +170,11 @@ export default function TarifsPage() {
             </div>
 
             <Link
-              to="/contact"
+              to={YAPLA_INSCRIPTION_URL}
               className="block w-full text-center py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl text-xs sm:text-sm transition-colors"
+              target="_blank"
             >
-              Rejoindre le club
+              S'inscrire en ligne
             </Link>
           </div>
         </div>

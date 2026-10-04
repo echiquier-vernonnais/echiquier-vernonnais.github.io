@@ -1,22 +1,10 @@
-import {
-  ChessKing,
-  ChessKnight,
-  ChessPawn,
-  ChessQueen,
-  Clock,
-  GraduationCap,
-  Trophy,
-  Users,
-} from "lucide-react";
+import { GraduationCap, Trophy, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../components/Routes";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import Carousel from "../components/Carousel";
+import Horaires from "../components/Horaires";
 
 export default function HomePage() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000 }),
-  ]);
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
@@ -35,106 +23,11 @@ export default function HomePage() {
                 perfectionnez votre jeu dans un cadre accueillant et passionné.
               </p>
 
-              <div
-                className="overflow-hidden rounded-2xl border border-slate-200"
-                ref={emblaRef}
-              >
-                <div className="flex">
-                  {[
-                    { src: "/enfants.jpg", caption: "Cours débutants" },
-                    { src: "/tournoi.jpg", caption: "Open FIDE" },
-                    { src: "/chessbar.jpg", caption: "Chess bar" },
-                  ].map((img, i) => (
-                    <div key={i} className="flex-[0_0_100%] min-w-0 relative">
-                      <img
-                        src={img.src}
-                        alt={img.caption}
-                        className="w-full h-64 object-cover"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm text-center">
-                        {img.caption}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Carousel />
             </div>
 
             <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-md bg-white border border-slate-200 rounded-2xl p-6 shadow-sm relative">
-                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2 border-b border-slate-100 pb-3">
-                  <Clock className="w-5 h-5 text-amber-600" />
-                  Horaires du Samedi Après-midi
-                </h3>
-
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
-                  <li className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
-                    <div className="p-1.5 rounded bg-amber-400 text-slate-900 font-bold text-xs shrink-0 mt-0.5">
-                      14h-18h
-                    </div>
-                    <div>
-                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
-                        <ChessKing className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Jeux Libres</span>
-                      </div>
-                      <div className="text-xs text-slate-600 mt-0.5">
-                        Échiquiers à disposition tout l'après-midi pour parties
-                        amicales et entraînements.
-                      </div>
-                    </div>
-                  </li>
-
-                  <li className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                    <div className="p-1.5 rounded bg-amber-100 text-amber-900 font-bold text-xs shrink-0">
-                      14h
-                    </div>
-                    <div>
-                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
-                        <ChessPawn className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Cours d'Échecs Débutants</span>
-                      </div>
-                      <div className="text-xs text-slate-500">
-                        <span>
-                          Apprentissage des règles, déplacements, tactiques de
-                          base et finales simples.
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                    <div className="p-1.5 rounded bg-amber-100 text-amber-900 font-bold text-xs shrink-0">
-                      15h
-                    </div>
-                    <div>
-                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
-                        <ChessKnight className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Débutants / Perfectionnement</span>
-                      </div>
-                      <div className="text-xs text-slate-500">
-                        Analyse de parties, ouvertures classiques, structures de
-                        pions et calcul.
-                      </div>
-                    </div>
-                  </li>
-
-                  <li className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                    <div className="p-1.5 rounded bg-amber-100 text-amber-900 font-bold text-xs shrink-0">
-                      16h
-                    </div>
-                    <div>
-                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
-                        <ChessQueen className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Cours Joueurs Confirmés</span>
-                      </div>
-                      <div className="text-xs text-slate-500">
-                        Stratégie avancée, préparation d'ouvertures complexes et
-                        étude de grands maîtres.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <Horaires />
             </div>
           </div>
         </div>
@@ -215,7 +108,7 @@ export default function HomePage() {
             to={ROUTES.contact.path}
             className="px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl transition-colors shrink-0 text-sm"
           >
-            Nous contacter
+            {ROUTES.contact.label}
           </Link>
         </div>
       </section>

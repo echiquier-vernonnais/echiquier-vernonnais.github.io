@@ -1,5 +1,6 @@
 import { GraduationCap, Trophy, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import Carousel from "../components/Carousel";
+import Horaires from "../components/Horaires";
 
 export default function ClubPage() {
   return (
@@ -17,6 +18,12 @@ export default function ClubPage() {
             Affilié à la Fédération Française des Échecs (FFÉ), L'Échiquier
             Vernonnais propose des activités adaptées à tous les âges.
           </p>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white p-2">
+          <Carousel />
         </div>
       </section>
 
@@ -67,88 +74,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      {/* Detailed Saturday Schedule */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 border border-slate-200 space-y-8">
-          <div className="border-b border-slate-100 pb-4">
-            <h2 className="text-2xl font-bold text-slate-900">
-              Détail des créneaux du Samedi après-midi
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Maison des Associations / Salle Municipale, 27200 Vernon
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <span className="px-3 py-1 bg-amber-400 text-slate-900 font-bold text-xs rounded-lg shrink-0">
-                14h – 18h
-              </span>
-              <div>
-                <h4 className="font-bold text-slate-900 text-sm">
-                  Jeux Libres
-                </h4>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  Échiquiers à disposition tout l'après-midi pour parties
-                  amicales et entraînements.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <span className="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-lg shrink-0">
-                14h – 15h
-              </span>
-              <div>
-                <h4 className="font-bold text-slate-900 text-sm">
-                  Cours d'Échecs Débutants
-                </h4>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  Apprentissage des règles, déplacements, tactiques de base et
-                  finales simples.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <span className="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-lg shrink-0">
-                15h – 16h
-              </span>
-              <div>
-                <h4 className="font-bold text-slate-900 text-sm">
-                  Débutants / Perfectionnement
-                </h4>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  Analyse de parties, ouvertures classiques, structures de pions
-                  et calcul.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <span className="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-lg shrink-0">
-                16h – 17h
-              </span>
-              <div>
-                <h4 className="font-bold text-slate-900 text-sm">
-                  Cours Joueurs Confirmés
-                </h4>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  Stratégie avancée, préparation d'ouvertures complexes et étude
-                  de grands maîtres.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center pt-4">
-            <Link
-              to="/contact"
-              className="inline-block px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-sm rounded-xl transition-colors"
-            >
-              Contactez-nous pour vous inscrire
-            </Link>
-          </div>
+      <section className="flex justify-center px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-2xl">
+          <Horaires />
         </div>
       </section>
     </div>
