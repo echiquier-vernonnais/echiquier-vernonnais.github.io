@@ -23,7 +23,7 @@ function AppLayout() {
       <main className="flex-grow">
         <Routes>
           {Object.values(ROUTES).map((r) => (
-            <Route path={r.path} element={r.component} />
+            <Route key={r.path} path={r.path} element={r.component} />
           ))}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -38,7 +38,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {Object.values(ROUTES).map((r) => (
-                <li>
+                <li key={r.path}>
                   <Link
                     to={r.path}
                     className="hover:text-amber-800 transition-colors"

@@ -73,6 +73,7 @@ export default function Header() {
               <Link
                 key={item.path}
                 to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
                 className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between ${
                   isActive
                     ? "bg-amber-50 text-amber-900 font-bold"
