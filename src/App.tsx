@@ -1,13 +1,9 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import HomePage from "./pages/Home";
-import ClubPage from "./pages/Club";
-import TarifsPage from "./pages/Tarifs";
-import EventsPage from "./pages/Events";
-import ContactPage from "./pages/Contact";
-import MentionsPage from "./pages/Mentions";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { ROUTES } from "./components/Routes";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -26,12 +22,10 @@ function AppLayout() {
       {/* Main Page View Context via React Router Routes */}
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/a-propos" element={<ClubPage />} />
-          <Route path="/tarifs" element={<TarifsPage />} />
-          <Route path="/calendrier" element={<EventsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/mentions" element={<MentionsPage />} />
+          {Object.values(ROUTES).map((r) => (
+            <Route path={r.path} element={r.component} />
+          ))}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

@@ -2,6 +2,7 @@ import { ChessQueen, Clock, Mail, MapPin, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactEmail from "./ContactEmail";
 import ClubLocation from "./ClubLocation";
+import { ROUTES } from "./Routes";
 
 export default function Footer() {
   return (
@@ -36,43 +37,16 @@ export default function Footer() {
               Pages du site
             </h4>
             <ul className="space-y-2">
-              <li>
-                <Link to="/" className="hover:text-amber-800 transition-colors">
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/a-propos"
-                  className="hover:text-amber-800 transition-colors"
-                >
-                  Le Club & Cours
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/tarifs"
-                  className="hover:text-amber-800 transition-colors"
-                >
-                  Tarifs & Cotisations
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/calendrier"
-                  className="hover:text-amber-800 transition-colors"
-                >
-                  Calendrier & Événements
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/essai"
-                  className="hover:text-amber-800 transition-colors"
-                >
-                  Séance d'essai gratuite
-                </Link>
-              </li>
+              {Object.values(ROUTES).map((r) => (
+                <li>
+                  <Link
+                    to={r.path}
+                    className="hover:text-amber-800 transition-colors"
+                  >
+                    {r.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -109,22 +83,6 @@ export default function Footer() {
                 <div className="text-[11px] text-slate-500">Licences A & B</div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>
-            © L'Échiquier Vernonnais. Tous droits réservés. Club affilié à la
-            FFÉ.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link to="/mentions" className="hover:text-amber-800">
-              Mentions légales & Infos pratiques
-            </Link>
-            <span>•</span>
-            <Link to="/contact" className="hover:text-amber-800">
-              Vernon
-            </Link>
           </div>
         </div>
       </div>

@@ -1,13 +1,17 @@
 import {
   ArrowRight,
   Calendar,
+  ChessKing,
+  ChessKnight,
+  ChessPawn,
+  ChessQueen,
   Clock,
   GraduationCap,
-  Sparkles,
   Trophy,
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../components/Routes";
 
 export default function HomePage() {
   return (
@@ -35,7 +39,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <Link
-                  to="/contact"
+                  to={ROUTES.contact.path}
                   className="w-full sm:w-auto px-6 py-3.5 text-base font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
                   <span>S'inscrire / Essai Gratuit</span>
@@ -43,7 +47,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  to="/a-propos"
+                  to={ROUTES.leClub.path}
                   className="w-full sm:w-auto px-6 py-3.5 text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
                   <span>Découvrir nos cours</span>
@@ -79,13 +83,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Schedule Card */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="w-full max-w-md bg-white border border-slate-200 rounded-2xl p-6 shadow-sm relative">
-                <div className="absolute -top-3 right-6 bg-amber-400 text-slate-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
-                  Rentrée
-                </div>
-
                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2 border-b border-slate-100 pb-3">
                   <Clock className="w-5 h-5 text-amber-600" />
                   Horaires du Samedi Après-midi
@@ -98,8 +97,8 @@ export default function HomePage() {
                     </div>
                     <div>
                       <div className="font-bold text-amber-950 flex items-center gap-1.5">
+                        <ChessKing className="w-3.5 h-3.5 text-amber-600" />
                         <span>Jeux Libres</span>
-                        <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                       </div>
                       <div className="text-xs text-slate-600 mt-0.5">
                         Échiquiers à disposition tout l'après-midi pour parties
@@ -113,12 +112,15 @@ export default function HomePage() {
                       14h
                     </div>
                     <div>
-                      <div className="font-semibold text-slate-900">
-                        Cours d'Échecs Débutants
+                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
+                        <ChessPawn className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Cours d'Échecs Débutants</span>
                       </div>
                       <div className="text-xs text-slate-500">
-                        Apprentissage des règles, déplacements, tactiques de
-                        base et finales simples.
+                        <span>
+                          Apprentissage des règles, déplacements, tactiques de
+                          base et finales simples.
+                        </span>
                       </div>
                     </div>
                   </li>
@@ -128,8 +130,9 @@ export default function HomePage() {
                       15h
                     </div>
                     <div>
-                      <div className="font-semibold text-slate-900">
-                        Débutants / Perfectionnement
+                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
+                        <ChessKnight className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Débutants / Perfectionnement</span>
                       </div>
                       <div className="text-xs text-slate-500">
                         Analyse de parties, ouvertures classiques, structures de
@@ -143,8 +146,9 @@ export default function HomePage() {
                       16h
                     </div>
                     <div>
-                      <div className="font-semibold text-slate-900">
-                        Cours Joueurs Confirmés
+                      <div className="font-bold text-amber-950 flex items-center gap-1.5">
+                        <ChessQueen className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Cours Joueurs Confirmés</span>
                       </div>
                       <div className="text-xs text-slate-500">
                         Stratégie avancée, préparation d'ouvertures complexes et
@@ -153,22 +157,12 @@ export default function HomePage() {
                     </div>
                   </li>
                 </ul>
-
-                <div className="mt-5 pt-3 border-t border-slate-100">
-                  <Link
-                    to="/essai"
-                    className="block w-full text-center py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl text-xs transition-colors"
-                  >
-                    Réserver une séance de découverte offerte
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Club Overview Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
           <h2 className="text-xs font-bold text-amber-800 tracking-wider uppercase bg-amber-50 px-3 py-1 rounded-full border border-amber-200 inline-block">
@@ -241,10 +235,10 @@ export default function HomePage() {
             </p>
           </div>
           <Link
-            to="/essai"
+            to={ROUTES.contact.path}
             className="px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-xl transition-colors shrink-0 text-sm"
           >
-            Réserver mon essai gratuit
+            Nous contacter
           </Link>
         </div>
       </section>
