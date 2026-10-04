@@ -1,8 +1,9 @@
 import { ChevronRight, Crown, MapPin, Menu, Sparkles, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navItems = [
     { path: "/", label: "Accueil" },
