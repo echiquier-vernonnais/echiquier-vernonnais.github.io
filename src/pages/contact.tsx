@@ -1,5 +1,5 @@
 import { CheckCircle2, Clock, Mail, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 export default function ContactPage() {
   const [contactForm, setContactForm] = useState({
@@ -10,7 +10,7 @@ export default function ContactPage() {
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = (e: FormEvent) => {
     e.preventDefault();
     setContactSubmitted(true);
     setTimeout(() => setContactSubmitted(false), 6000);

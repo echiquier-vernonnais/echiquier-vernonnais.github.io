@@ -1,5 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 export default function EssaiPage() {
   const [trialForm, setTrialForm] = useState({
@@ -10,7 +10,7 @@ export default function EssaiPage() {
   });
   const [trialSubmitted, setTrialSubmitted] = useState(false);
 
-  const handleTrialSubmit = (e) => {
+  const handleTrialSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTrialSubmitted(true);
     setTimeout(() => setTrialSubmitted(false), 6000);
