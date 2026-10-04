@@ -5,7 +5,7 @@ export default function ClubLocation() {
       className="hover:text-amber-700 hover:underline"
       target="_blank"
     >
-      Maison des Associations / Salle Municipale, 27200 Vernon
+      Maison des Associations - Pl. Marcel Beaufour, 27200 Vernon
     </a>
   );
 }
