@@ -4,7 +4,9 @@ import {
   ChessPawn,
   ChessQueen,
   Clock,
+  ExternalLink,
 } from "lucide-react";
+import { YAPLA_INSCRIPTION_URL } from "../pages/Tarifs";
 
 export default function Horaires() {
   return (
@@ -81,6 +83,13 @@ export default function Horaires() {
           </div>
         </li>
       </ul>
+      <a
+        href={YAPLA_INSCRIPTION_URL}
+        className="mt-6 w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 rounded-xl transition-colors"
+      >
+        S'inscrire en ligne
+        <ExternalLink className="w-4 h-4" />
+      </a>
     </div>
   );
 }

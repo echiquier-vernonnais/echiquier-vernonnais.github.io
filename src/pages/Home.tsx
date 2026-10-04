@@ -35,9 +35,6 @@ export default function HomePage() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <h2 className="text-xs font-bold text-amber-800 tracking-wider uppercase bg-amber-50 px-3 py-1 rounded-full border border-amber-200 inline-block">
-            Vie du Club
-          </h2>
           <p className="text-3xl font-extrabold text-slate-900">
             Un espace de passion et de convivialité à Vernon
           </p>

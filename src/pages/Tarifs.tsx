@@ -1,10 +1,10 @@
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function TarifsPage() {
-  const YAPLA_INSCRIPTION_URL =
-    "https://echiquier-vernonnais.s2.yapla.com/fr/event-119423";
+export const YAPLA_INSCRIPTION_URL =
+  "https://echiquier-vernonnais.s2.yapla.com/fr/event-119423";
 
+export default function TarifsPage() {
   return (
     <div className="space-y-16 pb-16">
       <section className="bg-slate-50 border-b border-slate-100 py-12">
@@ -91,7 +91,7 @@ export default function TarifsPage() {
               target="_blank"
               className="block w-full text-center py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs sm:text-sm transition-colors"
             >
-              S'inscrire en ligne
+              <span>S'inscrire en ligne</span>
             </Link>
           </div>
 
