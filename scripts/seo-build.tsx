@@ -7,6 +7,5 @@ for (const r of [...Object.values(ROUTES), { path: "404" }]) {
   if (r.path === "/") {
     continue;
   }
-  console.log("PATH = ", r.path);
   execSync(`cp dist/index.html ${path.join("dist", `${r.path}.html`)}`);
 }
