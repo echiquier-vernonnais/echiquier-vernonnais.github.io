@@ -4,9 +4,9 @@ import Horaires from "../components/Horaires";
 
 export default function ClubPage() {
   return (
-    <div className="space-y-16 pb-16">
+    <div className="bg-chess-pattern space-y-16 pb-16">
       {/* Header Banner */}
-      <section className="bg-slate-50 border-b border-slate-100 py-12">
+      <section className="bg-glass border-b border-slate-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-bold text-amber-800 uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
             Vie du Club

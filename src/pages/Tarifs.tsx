@@ -6,8 +6,8 @@ export const YAPLA_INSCRIPTION_URL =
 
 export default function TarifsPage() {
   return (
-    <div className="space-y-16 pb-16">
-      <section className="bg-slate-50 border-b border-slate-100 py-12">
+    <div className="bg-chess-pattern space-y-16 pb-16">
+      <section className="bg-glass border-b border-slate-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">
             Cotisations annuelles de l'Échiquier Vernonnais
