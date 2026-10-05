@@ -20,7 +20,6 @@ function AppLayout() {
     <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col antialiased selection:bg-amber-100 selection:text-amber-900">
       <Header />
 
-      {/* Main Page View Context via React Router Routes */}
       <main className="flex-grow">
         <Routes>
           {Object.values(ROUTES).map((r) => (
