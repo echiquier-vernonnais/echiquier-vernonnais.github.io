@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build": "tsc -b && vite build && pnpm seo-build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seo-build": "tsx scripts/seo-build.tsx"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -18,7 +19,8 @@
     "react-dom": "^19.3.0",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.18.4",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
