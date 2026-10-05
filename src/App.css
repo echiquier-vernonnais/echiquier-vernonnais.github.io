@@ -1,0 +1,13 @@
+.bg-chess-pattern {
+  background-color: #faf9f6;
+  background-image: url("/chess-pattern.svg");
+  background-repeat: repeat;
+  background-size: 420px 420px;
+}
+
+/* Glassmorphic soft card backdrop */
+.bg-glass {
+  background: rgba(250, 249, 246, 0.01); /* Semi-transparent #faf9f6 */
+  backdrop-filter: blur(10px); /* Blurs SVG pattern behind */
+  border-radius: 12px;
+}

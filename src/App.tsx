@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { ROUTES } from "./components/Routes";
 import NotFoundPage from "./pages/NotFoundPage";
+import "./App.css";
 
 export default function App() {
   return (
