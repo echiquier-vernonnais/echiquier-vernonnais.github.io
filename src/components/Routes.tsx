@@ -31,8 +31,8 @@ export const ROUTES: Record<
   events: {
     component: EventsPage,
     description: "Retrouvez Les évènements qui rythment la vie du club",
-    label: "Évènements",
-    path: "evenements",
+    label: "Agenda",
+    path: "agenda",
   },
   tarifs: {
     component: TarifsPage,
