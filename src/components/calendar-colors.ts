@@ -1,4 +1,4 @@
-import { BookOpen, Coffee, Trophy, Users } from "lucide-react";
+import { BookOpen, Pizza, Trophy, Users } from "lucide-react";
 
 export const TYPE_CONFIG = {
   cours: {
@@ -7,7 +7,7 @@ export const TYPE_CONFIG = {
     color: "text-sky-600",
   },
   "Vie du club": {
-    icon: Coffee,
+    icon: Pizza,
     bg: "bg-fuchsia-100",
     color: "text-fuchsia-600",
   },
