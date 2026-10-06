@@ -1,30 +1,12 @@
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { BookOpen, CalendarDays, Shield, Trophy, Users } from "lucide-react";
+import { CalendarDays } from "lucide-react";
+import { TYPE_CONFIG } from "./calendar-colors";
 
 export type EventType = {
   title: string;
   date: string;
-  type: "cours" | "Vie du club" | "tournoi" | "Matchs par équipe";
-};
-
-const TYPE_CONFIG = {
-  cours: { icon: BookOpen, bg: "bg-blue-100", color: "text-blue-600" },
-  "Vie du club": {
-    icon: Users,
-    bg: "bg-emerald-100",
-    color: "text-emerald-600",
-  },
-  tournoi: {
-    icon: Trophy,
-    bg: "bg-amber-100",
-    color: "text-amber-600",
-  },
-  "Matchs par équipe": {
-    icon: Shield,
-    bg: "bg-purple-100",
-    color: "text-purple-600",
-  },
+  type: "cours" | "Vie du club" | "tournoi" | "interclubs";
 };
 
 function parseEventDate(datestring: string) {
@@ -35,7 +17,7 @@ export function EventIcon({
   type,
   className = "h-4 w-4",
 }: {
-  type: EventType["type"];
+  type: keyof typeof TYPE_CONFIG;
   className?: string;
 }) {
   const Icon = TYPE_CONFIG[type].icon;

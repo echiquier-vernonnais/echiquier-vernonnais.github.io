@@ -1,11 +1,4 @@
-import {
-  ChevronLeft,
-  ChevronRight,
-  Trophy,
-  BookOpen,
-  Users,
-  Star,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   addMonths,
   eachDayOfInterval,
@@ -22,33 +15,7 @@ import {
 import { fr } from "date-fns/locale";
 import { useMemo, useState } from "react";
 import { EventIcon, EventList, type EventType } from "./EventList";
-
-const TYPE_CONFIG = {
-  tournoi: {
-    icon: Trophy,
-    color: "text-amber-600",
-    bg: "bg-amber-100",
-    dot: "bg-amber-500",
-  },
-  cours: {
-    icon: BookOpen,
-    color: "text-sky-600",
-    bg: "bg-sky-100",
-    dot: "bg-sky-500",
-  },
-  "Matchs par équipe": {
-    icon: Users,
-    color: "text-emerald-600",
-    bg: "bg-emerald-100",
-    dot: "bg-emerald-500",
-  },
-  "Vie du club": {
-    icon: Star,
-    color: "text-rose-600",
-    bg: "bg-rose-100",
-    dot: "bg-rose-500",
-  },
-};
+import { TYPE_CONFIG } from "./calendar-colors";
 
 const WEEK_DAYS = ["lun", "mar", "mer", "jeu", "ven", "sam", "dim"];
 
@@ -213,11 +180,12 @@ export default function ClubCalendar({ events }: { events: Array<EventType> }) {
                     )}
                   </div>
                   {dayEvents.length > 0 && (
-                    <div className="mt-2 flex justify-end gap-1 sm:hidden">
+                    <div className="mt-2 flex justify-center gap-1 sm:hidden">
                       {dayEvents.slice(0, 3).map((event, index) => (
-                        <span
+                        <EventIcon
                           key={`${event.title}-${index}`}
-                          className={`h-1.5 w-1.5 rounded-full ${TYPE_CONFIG[event.type].dot}`}
+                          type={event.type}
+                          className={`h-3 w-3 ${TYPE_CONFIG[event.type].color}`}
                         />
                       ))}
                       {dayEvents.length > 3 && (

@@ -37,7 +37,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2026-10-11",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
@@ -50,9 +50,9 @@ const EVENTS: Array<EventType> = [
     type: "cours",
   },
   {
-    title: "Coupe LOUBATIERE",
+    title: "Coupe Loubatière",
     date: "2026-10-18",
-    type: "tournoi",
+    type: "interclubs",
   },
   {
     title: "VERNON CHESS BAR",
@@ -72,7 +72,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2026-11-08",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
@@ -107,7 +107,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2026-11-29",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
@@ -132,7 +132,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2026-12-13",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
@@ -167,7 +167,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2027-01-17",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
@@ -192,7 +192,7 @@ const EVENTS: Array<EventType> = [
   {
     title: "Interclubs",
     date: "2027-01-31",
-    type: "Matchs par équipe",
+    type: "interclubs",
   },
   {
     title: "analyse compétition",
