@@ -132,7 +132,7 @@ export default function ClubCalendar({ events }: { events: Array<EventType> }) {
                   key={dateKey}
                   onClick={() => setSelectedDate(day)}
                   className={[
-                    "group relative min-h-[88px] border-b border-r border-slate-100 p-1.5 text-left transition sm:min-h-[125px] sm:p-2",
+                    "group relative flex flex-col min-h-[88px] border-b border-r border-slate-100 p-1.5 text-left transition sm:min-h-[125px] sm:p-2",
                     "hover:bg-amber-50/50",
                     !isCurrentMonth && "bg-slate-50/50",
                     isSelected && "bg-amber-50",
@@ -140,7 +140,7 @@ export default function ClubCalendar({ events }: { events: Array<EventType> }) {
                     .filter(Boolean)
                     .join(" ")}
                 >
-                  <div className="flex justify-end">
+                  <div className="flex justify-end shrink-0">
                     <span
                       className={[
                         "flex h-7 w-7 items-center justify-center rounded-full text-xs font-semibold sm:h-8 sm:w-8 sm:text-sm",
@@ -157,7 +157,7 @@ export default function ClubCalendar({ events }: { events: Array<EventType> }) {
                       {format(day, "d")}
                     </span>
                   </div>
-                  <div className="mt-2 hidden space-y-1 sm:block">
+                  <div className="mt-2 hidden flex-grow flex-col justify-start space-y-1 sm:flex">
                     {dayEvents.slice(0, 3).map((event, index) => {
                       const config = TYPE_CONFIG[event.type];
                       return (
@@ -180,7 +180,7 @@ export default function ClubCalendar({ events }: { events: Array<EventType> }) {
                     )}
                   </div>
                   {dayEvents.length > 0 && (
-                    <div className="mt-2 flex justify-center gap-1 sm:hidden">
+                    <div className="mt-2 flex flex-grow items-center justify-center gap-1 sm:hidden">
                       {dayEvents.slice(0, 3).map((event, index) => (
                         <EventIcon
                           key={`${event.title}-${index}`}
