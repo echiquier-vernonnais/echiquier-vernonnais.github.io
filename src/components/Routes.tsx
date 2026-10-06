@@ -2,9 +2,18 @@ import ClubPage from "../pages/Club";
 import TarifsPage from "../pages/Tarifs";
 import HomePage from "../pages/Home";
 import ContactPage from "../pages/Contact";
+import EventsPage from "../pages/EventsPage";
 
 export const HOST = "https://echiquier-vernonnais.fr";
-export const ROUTES = {
+export const ROUTES: Record<
+  string,
+  {
+    component: () => React.JSX.Element;
+    description: string;
+    label: string;
+    path: string;
+  }
+> = {
   Accueil: {
     component: HomePage,
     description:
@@ -18,6 +27,12 @@ export const ROUTES = {
       "Découvrez l'Échiquier Vernonnais, un club d'échecs passionné à Vernon, offrant des cours pour tous les âges et niveaux.",
     label: "Le Club & Cours",
     path: "/le-club",
+  },
+  events: {
+    component: EventsPage,
+    description: "Retrouvez Les évènements qui rythment la vie du club",
+    label: "Évènements",
+    path: "evenements",
   },
   tarifs: {
     component: TarifsPage,

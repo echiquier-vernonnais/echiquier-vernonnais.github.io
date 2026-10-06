@@ -64,7 +64,9 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 text-sm">Email</div>
+                    <div className="font-bold text-slate-900 text-sm">
+                      Email
+                    </div>
                     <ContactEmail />
                   </div>
                 </div>
